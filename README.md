@@ -12,5 +12,6 @@ He too can boop
 - [] !rng: make it able to have an or instead of "!rng tacobell wendys", user would write "!rng tacobell or wendys" ignoring the 'or'
   1. Add image of an 8 ball for when rng is 8
 - [] !womp: will tts some sad sounds
+- [] !secret: Michael says "we love you"
 
 
