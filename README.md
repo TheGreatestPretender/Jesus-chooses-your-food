@@ -4,6 +4,7 @@ He too can boop
 ## How to run
 1. Install node js
 1. `npm install` 
+1. "token" in config.js should be your bots token that is generated on the discord developer app
 1. `node index.js`
 
 ### Commands to do
