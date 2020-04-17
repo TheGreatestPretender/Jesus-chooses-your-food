@@ -9,7 +9,7 @@ He too can boop
 
 ### Commands to do
 - [x] !jesus: tts some random bible verses
-- [] !rng: make it able to have an or instead of "!rng tacobell wendys", user would write "!rng tacobell or wendys" ignoring the 'or'
+- [x] !rng: make it able to have an or instead of "!rng tacobell wendys", user would write "!rng tacobell or wendys" ignoring the 'or'
      x 1. Add image of an 8 ball for when rng is 8
 - [] !womp: will tts some sad sounds
 - [x] !secret: Michael says "we love you"
