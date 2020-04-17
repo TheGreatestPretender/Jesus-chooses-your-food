@@ -13,6 +13,6 @@ He too can boop
      1. Add image of an 8 ball for when rng is 8
 - [] !womp: will tts some sad sounds
 - [x] !secret: Michael says "we love you"
-- [] If bot is asked too many questions in a the matter of 1 minute, play this sound clip: https://www.youtube.com/watch?v=aWs_tIvG2G8
+- [x] If bot is asked too many questions in a the matter of 1 minute, play this sound clip: https://www.youtube.com/watch?v=aWs_tIvG2G8
 
 
