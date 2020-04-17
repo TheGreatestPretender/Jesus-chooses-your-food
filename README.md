@@ -1,4 +1,4 @@
-# Jesus-chooses-your-food
+# Discord Bot named RNJesus that does lots of the things
 He too can boop
 
 ## How to run
