@@ -10,9 +10,9 @@ He too can boop
 ### Commands to do
 - [] !jesus: tts some random bible verses and will replace a random section with args if applicable
 - [] !rng: make it able to have an or instead of "!rng tacobell wendys", user would write "!rng tacobell or wendys" ignoring the 'or'
-  1. Add image of an 8 ball for when rng is 8
+     x 1. Add image of an 8 ball for when rng is 8
 - [] !womp: will tts some sad sounds
-- [] !secret: Michael says "we love you"
+- [x] !secret: Michael says "we love you"
 - [] If bot is asked too many questions in a the matter of 1 minute, play this sound clip: https://www.youtube.com/watch?v=aWs_tIvG2G8
 
 
