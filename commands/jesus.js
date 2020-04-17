@@ -1,3 +1,4 @@
+//this is just a test command
 module.exports = {
     name: 'test',
     description: 'RNJesus will quote a random bible verse',
