@@ -1,7 +1,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
-const ffmpeg = require('ffmpeg');
+//const ffmpeg = require('ffmpeg');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -19,8 +19,8 @@ client.once('ready', () => {
 	console.log('WE READY BOIS!');
 });
 
+
 client.on('message', async message => {
-    
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).split(/ +/);
@@ -58,6 +58,10 @@ client.on('message', async message => {
 
 		if (now < expirationTime) {
 			const timeLeft = (expirationTime - now) / 1000;
+
+			const channel = message.member.voiceChannel
+			
+    		channel.join();
 			return message.reply(`please wait your impatient ass, ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
 		}
 	}
