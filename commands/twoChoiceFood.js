@@ -6,7 +6,6 @@ module.exports = {
         const baddies = ['or', 'OR']
 
         let rng = Math.floor(Math.random() * 10) + 1;
-
         if (args.includes(baddies) || !args.includes(baddies)){
             if (rng % 2 === 0) {
                 if (rng === 8) {

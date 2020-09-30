@@ -49,6 +49,13 @@ client.on('message', async message => {
 		cooldowns.set(command.name, new Discord.Collection());
 	}
 
+	//so dummy bot doesnt answer itself
+	/* if (message.author === client.user) return
+	if (message.content.includes(client.user.toString())) {
+		console.log(client.user.toString());
+		message.reply(`What do you want ${message.author.toString()}? Leave me be!`)
+	} */
+
 	const now = Date.now();
 	const timestamps = cooldowns.get(command.name);
 	const cooldownAmount = (command.cooldown || 3) * 1000;
