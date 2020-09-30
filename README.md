@@ -15,3 +15,5 @@
 - [] Replace Dabbot / Vexera <em> (this will take a while...) </em>
 - [] !remindme: when the user types this along with what they want to be reminded of AS WELL AS the time/timezone of when to remind them
 - [] !womp: will tts some sad sounds
+- [x] !beer: will choose a random beer for you to drink :)
+- [] !spacex: returns information about next spacex launch and a link of where to watch, if available
