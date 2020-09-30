@@ -1,7 +1,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
-const ffmpeg = require('ffmpeg');
+//const ffmpeg = require('ffmpeg');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -19,8 +19,8 @@ client.once('ready', () => {
 	console.log('WE READY BOIS!');
 });
 
+
 client.on('message', async message => {
-    
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).split(/ +/);
@@ -60,12 +60,22 @@ client.on('message', async message => {
 	const timestamps = cooldowns.get(command.name);
 	const cooldownAmount = (command.cooldown || 3) * 1000;
 
+	if (!message.member.voiceChannel === 'General') {
+		return console.error('no such channel br0h');
+	}
+
 	if (timestamps.has(message.author.id)) {
 		const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
 
 		if (now < expirationTime) {
+			channel.join().then(
+				con => {
+					console.log('it worked');
+				}).catch (e => console.error(e));
 			const timeLeft = (expirationTime - now) / 1000;
-			return message.reply(`please wait your impatient ass, ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
+			
+
+			return message.reply(`please wait your impatient ass, ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`, { files: ['./media/tooManyQuestionsAudio.mp3','./media/tooManyQuestionsImg.png']});
 		}
 	}
 
