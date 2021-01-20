@@ -13,7 +13,7 @@ module.exports = {
                 console.log(json[i].name)
                 beer = json[i].name;
             }
-            message.channel.send('Try out this beer: ' + beer)
+            message.channel.send('Try out this beer: ' + beer + 'test');
         })
         .catch(err => console.error(err));
     }
