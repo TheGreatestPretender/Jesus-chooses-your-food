@@ -18,6 +18,6 @@ module.exports = {
         ];
 
         let rng = Math.floor(Math.random() * 10) + 1;
-        message.channel.send(`And so the prophet said! ${bibleVerses[rng]} @everyone`, {tts: true});
+        message.channel.send(`And so the prophet said! ${bibleVerses[rng]}`, {tts: true});
     }
 }
