@@ -1,17 +1,30 @@
 {
-  "name": "discord_bots",
+  "name": "discordbotboi",
   "version": "1.0.0",
-  "description": "Let jesus decide your fate",
+  "description": "## How to run 1. Install node js 1. `npm install`  1. \"token\" in config.js should be your bots token that is generated on the discord developer app 1. `node index.js`",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheGreatestPretender/DiscordBotBoi.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheGreatestPretender/DiscordBotBoi/issues"
+  },
+  "homepage": "https://github.com/TheGreatestPretender/DiscordBotBoi#readme",
   "dependencies": {
-    "discord.js": "^12.1.1",
-    "discord.js-commando": "^0.10.0",
-    "fs": "0.0.1-security",
-    "mtgsdk": "^0.4.3"
+    "@discordjs/builders": "^0.11.0",
+    "@discordjs/rest": "^0.2.0-canary.0",
+    "discord-api-types": "^0.26.1",
+    "discord.js": "^13.6.0",
+    "discord.js-commando": "^0.12.3",
+    "express": "^4.17.2",
+    "mtgsdk": "^1.0.0",
+    "node-fetch": "^2.6.1",
+    "passport-bnet": "^2.0.0"
   }
 }

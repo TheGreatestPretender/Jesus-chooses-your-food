@@ -1,10 +1,33 @@
 const fs = require('fs');
-const Discord = require('discord.js');
+const { Collection, Client, Intents } = require('discord.js');
 const { prefix, token } = require('./config.json');
-//const ffmpeg = require('ffmpeg');
+const express = require('express');
+const { port } = require('./config.json');
+const BnetStrategy = require('passport-bnet').Strategy;
+const BNET_ID = process.env.BNET_ID
+const BNET_SECRET = process.env.BNET_SECRET
 
-const client = new Discord.Client();
-client.commands = new Discord.Collection();
+const app = express();
+
+app.get('/', (req, res) => {
+    return res.sendFile('index.html', {root: '.'});
+});
+// Use the BnetStrategy within Passport.
+passport.use(new BnetStrategy({
+    clientID: BNET_ID,
+    clientSecret: BNET_SECRET,
+    callbackURL: "https://localhost:3000/auth/bnet/callback",
+    region: "us"
+}, function(accessToken, refreshToken, profile, done) {
+    return done(null, profile);
+}));
+
+
+app.listen(port, () => console.log(`Express listening at http:.//localhost:${port}`));
+
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+client.commands = new Collection();
+
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -13,14 +36,14 @@ for (const file of commandFiles) {
 	client.commands.set(command.name, command);
 }
 
-const cooldowns = new Discord.Collection();
+const cooldowns = new Collection();
 
 client.once('ready', () => {
 	console.log('WE READY BOIS!');
 });
 
 
-client.on('message', async message => {
+client.on('messageCreate', async message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).split(/ +/);
@@ -46,7 +69,7 @@ client.on('message', async message => {
 	}
 
 	if (!cooldowns.has(command.name)) {
-		cooldowns.set(command.name, new Discord.Collection());
+		cooldowns.set(command.name, new Collection());
 	}
 
 	//so dummy bot doesnt answer itself
